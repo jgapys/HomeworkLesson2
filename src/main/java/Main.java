@@ -19,6 +19,7 @@ public class Main {
         char[] asciiNumbers = new char[charactersNumber];
         String token = "";
         char[] excludedAsciiNumbers = {34, 39, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 91, 92, 93, 95, 96};
+
         for (int i = 0; i < asciiNumbers.length; i++) {
             asciiNumbers[i] = (char) (new Random().nextInt(123 - 33) + 33);
             if (String.valueOf(excludedAsciiNumbers).contains("" + asciiNumbers[i])) {
@@ -27,6 +28,7 @@ public class Main {
                 token += asciiNumbers[i];
             }
         }
+
         return token;
     }
 }
