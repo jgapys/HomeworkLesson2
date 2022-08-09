@@ -7,12 +7,13 @@ public class Main {
         System.out.println("How many character token do you want to generate? You can choose between 5, 10 or 15.");
         int charactersNumber = new Scanner(System.in).nextInt();
 
-        if (Arrays.asList(5, 10, 15).contains(charactersNumber)) {
+        int[] allowableCharactersNumbers = {5, 10, 15};
+
+        if (Arrays.stream(allowableCharactersNumbers).anyMatch(i -> i == charactersNumber)) {
             System.out.println("Your generated token: " + tokenGenerator(charactersNumber));
         } else {
             System.out.println("Sorry, you entered the wrong number. The number must be 5, 10 or 15.");
         }
-
     }
 
     public static String tokenGenerator(int charactersNumber) {
